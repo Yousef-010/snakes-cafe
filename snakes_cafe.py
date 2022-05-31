@@ -68,5 +68,5 @@ while user_order != 'quit':
         order.append(user_order)
         print(f'** {order.count(user_order)} order of {user_order} have been added to your meal **')
     else:
-        print('please order one of the stuff on the menu!!')
+        print('invalid order PLEASE select order on the menu')
     user_order = input('> ')
