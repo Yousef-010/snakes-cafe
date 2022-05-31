@@ -57,7 +57,7 @@ for z in the_menu:
         all_dishes += j.lower() + ' '
 print(all_dishes)
 print('***********************************')
-print('** What would you like to order? **')
+print('** What would you like to order? ')
 print('***********************************')
 
 order = []
