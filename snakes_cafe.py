@@ -1,4 +1,3 @@
-
 #  the menu of the titles in the restaurant
 the_menu = [
     {
@@ -36,10 +35,11 @@ the_menu = [
     }
 ]
 
+print(
+    '**************************************\n**  Welcome to the Snakes Cafe!   **\n**  Please see our menu below.  **\n** To quit at any time, type "quit" **\n**************************************')
 
-print('**************************************\n**  Welcome to the Snakes Cafe!   **\n**  Please see our menu below.  **\n** To quit at any time, type "quit" **\n**************************************')
 
-
+# print out the all menu
 def print_menu():
     for x in the_menu:
         print(x['title'])
@@ -51,48 +51,22 @@ def print_menu():
 
 print_menu()
 
-all_dishes =''
+all_dishes = ''
 for z in the_menu:
     for j in z['subtitle']:
-        all_dishes += j.lower() +' '
-
+        all_dishes += j.lower() + ' '
+print(all_dishes)
 print('***********************************')
-user_order = input(' What would you like to order?  ').lower()
+print('** What would you like to order? **')
+print('***********************************')
 
+order = []
+user_order= input('> ')
 
-
-
-def make_order(user_input):
-    counters = 1
-    orders = ''
-    quit = False
-    for x in the_menu:
-        for y in x['subtitle']:
-           if y.lower() == user_input:
-
-               orders += user_input + ' '
-               print(f'{counters} order of {orders} have been added to your meal')
-               exit_msg = input('type quit to finish or no to complete your order : ')
-               quit = True
-
-               while exit_msg != 'quit':
-                  user_order=''
-                  if y.lower() == user_input:
-
-                      user_order = input(' What would you like to order?  ').lower()
-                      if user_order in all_dishes:
-                          counters += 1
-                          orders += user_order + ' '
-                          print(f'{counters} order of {orders} have been added to your meal')
-                          exit_msg = input('type quit to finish or no to complete your order : ')
-                          quit = True
-                      else:
-                          print('invalid input plwase select again ')
-                          quit = False
-
-    if quit:
-        print(f'your order {orders} has been added :)  :')
+while user_order != 'quit':
+    if user_order in all_dishes and user_order != 'a':
+        order.append(user_order)
+        print(f'** {order.count(user_order)} order of {user_order} have been added to your meal **')
     else:
-        print(f'your order is not available in our menu please check our menu :')
-
-make_order(user_order)
+        print('please order one of the stuff on the menu!!')
+    user_order = input('> ')
